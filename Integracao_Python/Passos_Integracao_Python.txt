@@ -1,0 +1,24 @@
+
+--------------------------------
+Passo 01.Checar versão Python
+--------------------------------
+>python --version
+Python 3.6.1 :: Anaconda 4.4.0 (64-bit)
+
+
+---------------------------------
+Passo 02. Criar Ambiente Virtual
+---------------------------------
+>conda create -y -n py_knime1 python=3.6.1 pandas jedi scikit-learn
+
+----------------------------------
+Passo 03 - Ativar Ambinete Virtual
+----------------------------------
+>where  anaconda
+C:\Users\rdat\Anaconda3\Scripts\anaconda.exe
+>where python
+C:\Users\rdat\Anaconda3\python.exe
+
+---------------------------------
+Passo 04 - Configurar Knime
+---------------------------------
