@@ -1,0 +1,15 @@
+library(caret) 
+
+knnTrainControl <- trainControl(method = "repeatedcv",  
+                                  number = 10,           
+                                  repeats = 1,         
+                                  returnResamp = "all"
+                                  )
+ set.seed(100)
+ knime.model <- knnModel<-train(PLreal ~.,
+                  data=knime.in,
+                  preProcess = c("center","scale"),
+                  method = "knn",
+                  trControl = knnTrainControl,
+                  tuneGrid = data.frame(.k=c(1,3,5,7,9,11))
+                  )

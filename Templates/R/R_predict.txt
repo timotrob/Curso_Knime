@@ -1,0 +1,2 @@
+PLrealPred <- predict(knime.model, knime.in)
+knime.out <- cbind(knime.in, PLrealPred)

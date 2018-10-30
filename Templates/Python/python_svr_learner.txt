@@ -1,0 +1,12 @@
+from sklearn import svm
+from sklearn.model_selection import GridSearchCV
+svr = svm.SVR()
+param_grid = [
+  {'C': [1, 10, 100, 1000], 'kernel': ['linear']},
+  {'C': [1, 10, 100, 1000], 'gamma': [0.001, 0.0001], 'kernel': ['rbf']},
+ ]
+X_train = input_table.drop(['PLreal'], axis=1)
+y_train = input_table['PLreal']
+grid = GridSearchCV(svr, param_grid,cv=10,scoring='neg_mean_squared_error')
+grid.fit(X_train,y_train)
+output_model = grid

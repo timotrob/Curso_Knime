@@ -1,0 +1,8 @@
+from sklearn.model_selection import GridSearchCV
+from sklearn.neighbors import KNeighborsRegressor
+# Copy input table to output table
+output_table = input_table.copy()
+# Append predictions
+X_test = input_table.drop(['PLreal'], axis=1)
+y_pred = input_model.predict(X_test)
+output_table['Ypred'] = y_pred

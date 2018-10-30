@@ -1,0 +1,10 @@
+from sklearn.model_selection import GridSearchCV
+from sklearn.neighbors import KNeighborsRegressor
+
+parameters = {'n_neighbors':list(range(1, 31))}
+knn = KNeighborsRegressor()
+X_train = input_table.drop(['PLreal'], axis=1)
+y_train = input_table['PLreal']
+grid = GridSearchCV(knn, parameters,cv=10,scoring='neg_mean_squared_error')
+grid.fit(X_train,y_train)
+output_model = grid
