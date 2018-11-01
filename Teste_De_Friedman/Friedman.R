@@ -1,7 +1,7 @@
 
 library(PMCMR)
-df <- read.csv("c:\\...\\....csv")
-res <- runFriedmanNemenyiTest(as.matrix(df[,-c(1)]))
+df <- read.csv2("C:\\Users\\user\\Downloads\\BestFitnessAckley.csv",sep=";")
+res <- runFriedmanNemenyiTest(as.matrix(df))
 
 
 runFriedmanNemenyiTest<-function(resultMatrix){
@@ -19,7 +19,7 @@ runFriedmanNemenyiTest<-function(resultMatrix){
     install.packages("PMCMR")
     library(PMCMR)
   }
-  
+
   resp<-list()
   resp$friedmanTest<-friedman.test(resultMatrix)
   resp$friedman.nemenyi<-posthoc.friedman.nemenyi.test(resultMatrix)
